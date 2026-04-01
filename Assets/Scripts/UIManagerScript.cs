@@ -18,4 +18,6 @@ public class UIManagerScript : MonoBehaviour
         MenuUI.SetActive(false);
         GameUI.SetActive(true); 
     }
+
+    //random ahh comment
 }
