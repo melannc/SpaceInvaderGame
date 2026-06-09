@@ -24,7 +24,7 @@ A 2D space shooter game built with Unity.
 3. Run `Space Invader.exe`
 
 ## Download
-[Latest Release](your-github-release-link-here)
+[Latest Release](https://melannc.itch.io/spaceinvader)
 
 ## Screenshots
 (add screenshots of your game here)
