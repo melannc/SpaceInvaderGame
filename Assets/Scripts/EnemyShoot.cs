@@ -20,6 +20,7 @@ public class EnemyShoot : MonoBehaviour
 
     void Shoot()
     {
+        AudioManager.Instance.PlayShoot(); // add this
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.linearVelocity = -firePoint.up * bulletSpeed; // use firePoint.right for horizontal

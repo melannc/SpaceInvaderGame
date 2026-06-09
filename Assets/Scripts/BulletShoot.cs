@@ -3,7 +3,7 @@ using UnityEngine;
 public class BulletShoot : MonoBehaviour
 {
     public GameObject bulletPrefab;
-    public float fireRate = 1f;      // bullets per second
+    public float fireRate = 2f;      // bullets per second
     public float bulletSpeed = 10f;
     public Transform firePoint;      // where bullet spawns
 
@@ -20,6 +20,7 @@ public class BulletShoot : MonoBehaviour
 
     void Shoot()
     {
+        AudioManager.Instance.PlayShoot(); // add this
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.linearVelocity = firePoint.up * bulletSpeed; // use firePoint.right for horizontal
