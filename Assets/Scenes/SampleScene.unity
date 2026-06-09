@@ -343,6 +343,7 @@ GameObject:
   m_Component:
   - component: {fileID: 527540934}
   - component: {fileID: 527540935}
+  - component: {fileID: 527540936}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -362,7 +363,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 2.14, z: 0}
   m_LocalScale: {x: 0.36690736, y: 0.36690736, z: 0.36690736}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1871409541}
   m_Father: {fileID: 1000688912}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &527540935
@@ -423,6 +425,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &527540936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 527540933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69c318f809e9bcf41a12d4037d40133d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BulletShoot
+  bulletPrefab: {fileID: 8363510469280278427, guid: 7571089f54bbc774995f921a85a13afc, type: 3}
+  fireRate: 1
+  bulletSpeed: 10
+  firePoint: {fileID: 1871409541}
 --- !u!1 &599866413
 GameObject:
   m_ObjectHideFlags: 0
@@ -720,6 +738,37 @@ RectTransform:
   m_AnchoredPosition: {x: 10.421082, y: 11.998489}
   m_SizeDelta: {x: 809.1566, y: 459.8906}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &794568522
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 794568523}
+  m_Layer: 0
+  m_Name: PlayerBulletStart
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &794568523
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 794568522}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1617832464}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &805272640
 GameObject:
   m_ObjectHideFlags: 0
@@ -1128,7 +1177,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1000688912
 Transform:
   m_ObjectHideFlags: 0
@@ -1398,6 +1447,7 @@ GameObject:
   - component: {fileID: 1617832464}
   - component: {fileID: 1617832465}
   - component: {fileID: 1617832466}
+  - component: {fileID: 1617832467}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1417,7 +1467,8 @@ Transform:
   m_LocalPosition: {x: 0, y: -3.0579, z: 0}
   m_LocalScale: {x: 0.46967, y: 0.46967, z: 0.46967}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 794568523}
   m_Father: {fileID: 1000688912}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1617832465
@@ -1492,6 +1543,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   moveSpeed: 0.5
   screenLimit: 8.5
+--- !u!114 &1617832467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1617832463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69c318f809e9bcf41a12d4037d40133d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BulletShoot
+  bulletPrefab: {fileID: 1644909655957253785, guid: accb242a704a8f244bd9d678a4584761, type: 3}
+  fireRate: 1
+  bulletSpeed: 10
+  firePoint: {fileID: 794568523}
 --- !u!1 &1642692402
 GameObject:
   m_ObjectHideFlags: 0
@@ -1570,6 +1637,37 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1871409540
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1871409541}
+  m_Layer: 0
+  m_Name: EnemyBulletStart
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1871409541
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1871409540}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 527540934}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1905166450
 GameObject:
